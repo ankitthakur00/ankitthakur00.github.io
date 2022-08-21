@@ -10,11 +10,12 @@
 :root {
 
     /* colours */
-    --content-text: #525252;
-    --salmon: #f78888;
+    --content-text: rgb(244, 207, 207);
+    /* --salmon: #f78888; */
+    --salmon:rgba(14, 162, 195, 0.9);
     --light-salmon: #f59595;
-    --header-text: #333333;
-    --section-title-text: #2e2e2e;
+    --header-text: #dfdfdf;
+    --section-title-text: #dbd8d8;
 
 }
 
@@ -37,7 +38,7 @@ body {
     font-family: 'Karla', sans-serif;
     font-weight: 200;
     font-size: 18px;
-
+    background-color: rgb(2, 2, 24);
     color: var(--content-text);
     cursor: default;
 }
@@ -63,7 +64,15 @@ code {
 
 /* ------------------ MENU ------------------ */
 nav.navbar {
-    background-color: white;
+    background-color: rgb(2, 2, 24);
+     border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);  
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(217, 214, 214, 0.939);
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(14, 162, 195, 0.9);
 }
  
 nav.navbar a.icon img {
@@ -71,6 +80,7 @@ nav.navbar a.icon img {
     height: 25px;
     margin-right: 10px;
 }
+
 
 nav.navbar div#social-media-icons {
     margin-right: 10px;
@@ -98,15 +108,21 @@ nav.navbar div#social-media-icons {
 
 div.main-component > div#header {
     display: flex;
+    border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);
+    padding-bottom: 30px;
 }
 
 div.main-component > div#header div#header-profile-pic {
     flex: .23;
     padding-right: 10%;
+    
 }
 
 div#header div#header-profile-pic img {
-    width: 100%;
+    /* margin-top: 20px; */
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
 }
 
 div.main-component >div#header div#header-content {
@@ -142,17 +158,47 @@ codersrank-widget {
     --header-text-color: var(--content-text);
 }
 
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+  
+  .ityped{
+    color:var(--salmon)
+  }
+  
+  
+
+
+
 /* ------------------ SECTIONS ------------------ */
 
 div#content div.section {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 div#content div.section > div.title {
     font-size: 25px;
     /* margin-top: 5%; */
+    width: auto;
     font-weight: 700;
     color: var(--salmon);
+    /* border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149); */
+
 }
 
 /* skills */
@@ -208,7 +254,8 @@ div#content div.section div.overview div.title {
 div#content div.section div.subsection {
     margin-top: 50px;
     margin-bottom: 50px;
-
+    padding-bottom: 20px;
+    /* border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149); */
     /* display: flex; */
     /* display: inline-block; */
     /* justify-content: space-between; */
@@ -230,8 +277,8 @@ div#content div.section div.subsection div.tags div.tag {
     margin: 2px 2px 5px 0px;
     padding: 2px 8px;
     display: inline-block;
-    color: rgb(155, 154, 154);
-    background-color: #F4F4F4;
+    color: rgb(7, 7, 7);
+    background-color: #f4f4f499;
     font-size: 15px;
 }
 
@@ -257,7 +304,7 @@ div.description.contains-image img {
 div#copyright {
     text-align: center;
     margin-top: 200px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 a, a:focus {

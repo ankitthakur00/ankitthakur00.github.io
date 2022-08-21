@@ -96,7 +96,7 @@
 					</div>
 
 					<div class="my-2 my-lg-0">
-						<a class="btn btn-outline-primary btn-sm" id="download-button" href="assets/ankit_kumar_resume.pdf" target="_blank">Download CV</a>
+						<a class="btn btn-outline-primary btn-sm" id="download-button" href="assets/AnkitKumarResume.pdf" target="_blank">Download CV</a>
 						
 					</div>
 					
@@ -114,10 +114,12 @@
 						<img src="assets/img/profile-photo.jpg">
 					</div>
 					<div id="header-content">
-						<intro>Hi &#x1F44B;&#x1F3FC;, i'm <name>Ankit</name>.</intro>
+						<intro>Hi <span class="wave">&#x1F44B;&#x1F3FC; </span> , i'm <name>Ankit</name>.</intro>
 						<div id="summary">
-							Currently working at <b>Epsilon</b> in Bangalore, INDIA<br>as a <b>Software Engineer 1</b>
-							</div>
+							Currently working at <b>Epsilon</b> in Bangalore, INDIA</b>
+							<br><br>
+							<h3>I am a <span class="ityped"></span></h3>
+						</div>
 					</div>
 				</div>
 
@@ -139,7 +141,9 @@
 						</div>
 						<div class="description">
 							<p>
-								
+								Designed and implemented a Data health monitoring dashboard using HTML,
+								CSS and JavaScript to visualize data health and lineage of data in different data
+								sources.Working on enhancing the system further to make it easy for users.
 							</p>
 						</div>
 					</div>
@@ -553,5 +557,12 @@
 	<!-- Coders Rank widget -->
 	<!-- <script src="https://profile.codersrank.io/widget/widget.js"></script> -->
 
+	<script src="https://unpkg.com/ityped@0.0.10"></script>
+	<script>
+		window.ityped.init(document.querySelector('.ityped'),{
+			strings: ['Programmer!','Full stack developer!','Problem Solver'],
+			loop: true
+		})
+	</script>
 </body>
 </html>
