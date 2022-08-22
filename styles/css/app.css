@@ -71,6 +71,7 @@ nav.navbar {
 .navbar-light .navbar-nav .nav-link {
     color: rgba(217, 214, 214, 0.939);
 }
+
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: rgba(14, 162, 195, 0.9);
 }
@@ -89,6 +90,7 @@ nav.navbar div#social-media-icons {
 .btn-outline-primary {
     border-color: var(--salmon);
     color: var(--salmon);
+    margin-right:20px;
 }
 
 .btn-outline-primary:hover {
@@ -109,7 +111,7 @@ nav.navbar div#social-media-icons {
 div.main-component > div#header {
     display: flex;
     border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 div.main-component > div#header div#header-profile-pic {
@@ -158,6 +160,10 @@ codersrank-widget {
     --header-text-color: var(--content-text);
 }
 
+
+
+
+
 .wave {
     animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
@@ -178,7 +184,10 @@ codersrank-widget {
   }
   
   .ityped{
-    color:var(--salmon)
+    color:var(--salmon);
+  }
+  .summary h3{
+    margin-bottom: 10px;
   }
   
   
@@ -408,6 +417,7 @@ a:hover {
         margin-bottom: 25px;
         padding: 10px 20px;
         border-radius: 15px;
+        
     }
 
     nav.navbar div.navbar-collapse {
