@@ -90,7 +90,8 @@ nav.navbar div#social-media-icons {
 .btn-outline-primary {
     border-color: var(--salmon);
     color: var(--salmon);
-    margin-right:20px;
+    margin-left: 10px;
+    margin-right:10px;
 }
 
 .btn-outline-primary:hover {
