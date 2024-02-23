@@ -3,11 +3,20 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap'); */
 @import "Proxima-Nova.css";
 
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Lato:300');
+
+
+
+
+
 /* ------------------ DEBUGGING ------------------ */
 
 /* ----------------------------------------------- */
 
 :root {
+    --accent-1: #ed542c;
+    --main-font: "Bungee Hairline";
+    --sec-font: "Lato";
 
     /* colours */
     --content-text: rgb(244, 207, 207);
@@ -18,6 +27,53 @@
     --section-title-text: #dbd8d8;
 
 }
+
+.universe {
+    z-index: -10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: contrast(120%);
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .universe-container {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%);
+  }
+  
+  .content {
+    width: inherit;
+    height: inherit;
+  }
+  
+  #universe {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0px;
+    height: 300px;
+    width: 100%;
+  }
+  
+  #scene {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -800px;
+    z-index: 100000;
+  }
 
 /* ------------------ LOADING ICON ------------------ */
 div#loading-icon img { width: 3%; }
@@ -38,7 +94,8 @@ body {
     font-family: 'Karla', sans-serif;
     font-weight: 200;
     font-size: 18px;
-    background-color: rgb(2, 2, 24);
+    /* background-color: rgb(2, 2, 24); */
+    background-color: #131313;
     color: var(--content-text);
     cursor: default;
 }
@@ -64,7 +121,10 @@ code {
 
 /* ------------------ MENU ------------------ */
 nav.navbar {
-    background-color: rgb(2, 2, 24);
+    /* background-color: rgb(2, 2, 24); */
+    
+    /* background-color: #131313; */
+    background-color: none;
      border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);  
 }
 
@@ -80,6 +140,9 @@ nav.navbar a.icon img {
     display: inline-block;
     height: 25px;
     margin-right: 10px;
+}
+nav.navbar-brand{
+    height: 50px;
 }
 
 
@@ -111,7 +174,7 @@ nav.navbar div#social-media-icons {
 
 div.main-component > div#header {
     display: flex;
-    border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);
+    /* border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149); */
     padding-bottom: 20px;
 }
 
@@ -123,14 +186,19 @@ div.main-component > div#header div#header-profile-pic {
 
 div#header div#header-profile-pic img {
     /* margin-top: 20px; */
-    width: 240px;
-    height: 240px;
+    width: 340px;
+    height: 340px;
     border-radius: 100%;
 }
 
 div.main-component >div#header div#header-content {
     flex: 1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15%;
+    margin-top: 10%;
 }
+
 
 body div#header intro {
     font-family: 'proxima-nova';
@@ -160,6 +228,94 @@ codersrank-widget {
     margin-top: 30px;
     --header-text-color: var(--content-text);
 }
+
+div.icon-scroll {
+	/* position: absolute; */
+	/* top: 50%; */
+    margin-top:12%;
+	margin-left: 50%;
+    width: 1em;
+	height: 3.125em;
+	transform: translateX(-50%) scale(2);
+	/* z-index: 99999; */
+}
+
+@media screen and (max-width: 768px) {
+    div.icon-scroll {
+      display: none;
+    }
+  }
+
+  
+.icon-arrows::after,
+.icon-arrows::before {
+  content: '';
+}
+.icon-arrows span,
+.icon-arrows::after,
+.icon-arrows::before {
+	display: block;
+	width: 0.315em;
+	height: 0.315em;
+	border-right: 1px solid rgba(255, 255, 255, 0.438);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.418);
+	margin: 0 0 0.125em 0.315em;
+	transform: rotate(45deg);
+  animation: mouse-scroll 1s infinite;
+	animation-direction: alternate;
+}
+
+.icon-arrows::before {
+	margin-top: 0.315em;
+	animation-delay: .1s;
+}
+
+.icon-scroll span {
+	animation-delay: .2s;
+}
+
+.icon-arrows::after {
+	animation-delay: .3s;
+}
+
+.icon-scroll .mouse {
+	height: 1.375em;
+	width: .875em;
+	border: 1px solid rgba(255, 255, 255, 0.212);
+	border-radius: 2em;
+}
+
+.icon-scroll .wheel {
+  position: relative;
+  display: block;
+  height: 0.1875em;
+  width: 0.1875em;
+  margin: 0.1875em auto 0;
+  background: rgba(255,255,255,.8);
+  animation: mouse-wheel 1.2s ease infinite;
+  border-radius: 50%;
+}
+
+@keyframes mouse-wheel {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(.375em);
+	}
+}
+
+@keyframes mouse-scroll {
+	0%   { opacity: 0; }
+	50%  { opacity: .5; }
+	100% { opacity: 1; }
+}
+
+
+
 
 
 
@@ -199,15 +355,23 @@ codersrank-widget {
 
 div#content div.section {
     padding-top: 70px;
+    padding: 50px;
+    border-radius: 30px;
+    margin-bottom:1%;
+    margin-top:1%;
+    background-color: rgba(0, 0, 0, 0.363);
+    border:1px solid rgba(255, 255, 255, 0.158);
 }
 
 div#content div.section > div.title {
+    border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);
     font-size: 25px;
     /* margin-top: 5%; */
     width: auto;
     font-weight: 700;
     color: var(--salmon);
-    /* border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149); */
+    padding-bottom:10px;
+    border-bottom: 0.1rem solid rgba(174, 190, 234, 0.149);
 
 }
 
@@ -230,7 +394,7 @@ div#content div.section#skills-section ul li {
     margin-bottom: 15px;
 
     -webkit-column-break-inside: avoid;
-    column-break-inside: avoid;
+    /* column-break-inside: avoid; */
     page-break-inside: avoid;
 }
 
@@ -458,4 +622,65 @@ a:hover {
         display: none;
     }
 
+}
+
+
+.animated-icons {
+	line-height: 1;
+	font-family: "roboto", sans-serif;
+	font-size: 1rem;
+	color: #FFF;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+	
+	a {
+		display: inline-block;
+		width: 24px;
+		vertical-align: middle;
+		height: auto;
+		margin-top: -1px;
+		color: inherit;
+		
+		svg {
+			height: auto;
+			width: 100%;
+		}
+	}
+	
+	.icons {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		height: 15px;
+		width: 15px;
+		overflow: hidden;
+		margin-top: -3px;
+		
+		.icons-container {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			font-size: 0;
+			animation: animateCopyright 10s infinite;
+			
+			> svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+}
+
+@keyframes animateCopyright {
+	0% { transform: translateY(0); }
+	20% { transform: translateY(0); }
+	25% { transform: translateY(-15px) }
+	45% { transform: translateY(-15px) }
+	50% { transform: translateY(-30px) }
+	70% { transform: translateY(-30px) }
+	75% { transform: translateY(-45px) }
+	95% { transform: translateY(-45px)}
+	100% { transform: translateY(0)}
 }
